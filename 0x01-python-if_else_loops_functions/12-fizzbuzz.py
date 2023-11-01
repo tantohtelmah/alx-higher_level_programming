@@ -9,5 +9,5 @@ def fizzbuzz():
         elif i % 5 == 0:
             result += "Buzz "
         else:
-            result += str(i) + ""
+            result += str(i) + " "
     print(result)
