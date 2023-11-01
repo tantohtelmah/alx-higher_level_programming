@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 def uppercase(str):
     result = ""
     for char in str:
@@ -7,3 +7,4 @@ def uppercase(str):
         else:
             result += char
     print(result + "\n", end="")
+    
