@@ -12,7 +12,7 @@ if __name__ == "__main__":
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
     a = int(sys.argv[1])
-    a = int(sys.argv[3])
+    b = int(sys.argv[3])
     if sys.argv[2] == "+":
         print("{} + {} = {}".format(a, b, calc.add(a, b)))
     if sys.argv[2] == "-":
