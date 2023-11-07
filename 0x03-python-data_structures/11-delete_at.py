@@ -6,4 +6,3 @@ def delete_at(my_list=[], idx=0):
     my_list.clear()
     my_list.extend(new_list)
     return my_list
-    
