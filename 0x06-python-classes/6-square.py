@@ -49,7 +49,6 @@ class Square:
 
     def my_print(self):
         for col in range(self.size):
-            print(" " * self.position[0], self.size * "#", end="")
-            print()
+            print("{}{}".format(" " * self.position[0], self.size * "#"))
         if self.size == 0:
             print()
