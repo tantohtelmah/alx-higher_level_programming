@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+""" def of square class """
+
+
 class Square:
+    """ Implementation """
+
     def validator(self, size):
         if type(size) is int:
             if size >= 0:
