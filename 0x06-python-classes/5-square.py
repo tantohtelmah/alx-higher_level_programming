@@ -31,6 +31,7 @@ class Square:
     def my_print(self):
         for col in range(self.size):
             for row in range(self.size):
-                print("#")
+                print("#", end="")
+            print()
         if self.size == 0:
             print()
