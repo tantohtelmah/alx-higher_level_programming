@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 class Rectangle:
-    """ initialisation """
+    """ 
+    initialisation
+    >>> Rectangle(2, 4)
+    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+    """
 
     def __init__(self, width=0, height=0):
         self.height = height
