@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 class Rectangle:
-    pass
+    """ Prints out the area """
+    
+    
     def width_validator(self, value):
             if type(value) is int:
                 if value >= 0:
