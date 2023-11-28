@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 class Rectangle:
-    """ Does nothing """
+    """ 
+    A class that defines a rectangle 
+    """
 
     pass
