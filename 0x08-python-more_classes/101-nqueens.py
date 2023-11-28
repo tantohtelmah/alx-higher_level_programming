@@ -9,10 +9,10 @@ def nqueens(n):
     """
 
     if not isinstance(n, int):
-        print("N must be a number")
+        print("N must be a number", file=sys.stderr)
         sys.exit(1)
     if n < 4:
-        print("N must be at least 4")
+        print("N must be at least 4", file=sys.stderr)
         sys.exit(1)
 
     def solve(queens, xy_dif, xy_sum):
@@ -26,16 +26,20 @@ def nqueens(n):
     result = []
     solve([], [], [])
     for solution in result:
-        print(' '.join(['#' * i + 'Q' + '#' * (n-i-1) for i in solution]))
+        for i in solution:
+            row = ['.'] * n
+            row[i] = 'Q'
+            print(' '.join(row))
+        print()
 
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print("Usage: nqueens N")
+        print("Usage: nqueens N", file=sys.stderr)
         sys.exit(1)
     try:
         n = int(sys.argv[1])
     except ValueError:
-        print("N must be a number")
+        print("N must be a number", file=sys.stderr)
         sys.exit(1)
     nqueens(n)
