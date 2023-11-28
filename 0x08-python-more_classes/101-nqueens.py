@@ -4,6 +4,9 @@ import sys
 
 
 def nqueens(n):
+    """ Solves the N queens problem """
+    
+    
     if not isinstance(n, int):
         print("N must be a number")
         sys.exit(1)
