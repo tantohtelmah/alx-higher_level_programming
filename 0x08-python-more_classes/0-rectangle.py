@@ -5,3 +5,4 @@ class Rectangle:
     """
 
     pass
+    """ pass """
