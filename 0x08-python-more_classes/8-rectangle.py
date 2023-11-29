@@ -32,7 +32,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        self.__width = value
+        self.__width = self.validator(value, "width")
 
     @property
     def height(self):
@@ -40,7 +40,7 @@ class Rectangle:
 
     @height.setter
     def height(self, value):
-        self.__height = value
+        self.__height = self.validator(value, "height")
 
     def area(self):
         """
