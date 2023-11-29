@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 """ Initialisation """
 
 
@@ -57,7 +56,6 @@ class Rectangle:
             return 0
         return (2 * (self.width + self.height))
 
-    
     def __str__(self):
         """ Prints """
         if self.width == 0 or self.height == 0:
@@ -67,4 +65,3 @@ class Rectangle:
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
-    
