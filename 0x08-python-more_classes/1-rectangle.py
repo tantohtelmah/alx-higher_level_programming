@@ -1,21 +1,29 @@
 #!/usr/bin/python3
 class Rectangle:
-    """ 
+    """
     initialisation
-    >>> Rectangle(2, 4)
-    {'_Rectangle__height': 4, '_Rectangle__width': 2}
+
     """
 
     def __init__(self, width=0, height=0):
+        """
+        function
+        """
         self.height = height
         self.width = width
 
     @property
     def height(self):
+        """
+        function
+        """
         return self.__height
 
     @height.setter
     def height(self, value):
+        """
+        function
+        """
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         elif value < 0:
@@ -25,10 +33,16 @@ class Rectangle:
 
     @property
     def width(self):
+        """
+        function
+        """
         return self.__width
 
     @width.setter
     def width(self, value):
+        """
+        function
+        """
         if not isinstance(value, int):
             raise TypeError('width must be an integer')
         elif value < 0:
