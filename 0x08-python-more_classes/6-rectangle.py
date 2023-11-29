@@ -66,9 +66,11 @@ class Rectangle:
         return rectangle[:-1]
 
     def __repr__(self):
+        """ return a string representation of the rectangle """
         self.number_of_instances += 1
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
+        """ Deletes an instance of the rectangle"""
         self.number_of_instances -= 1
         print("Bye rectangle...")
