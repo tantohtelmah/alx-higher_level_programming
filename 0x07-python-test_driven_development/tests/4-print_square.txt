@@ -1,0 +1,7 @@
+>>> print_square = __import__("print_square").print_square
+
+>>> print_square(4)
+####
+####
+####
+####
