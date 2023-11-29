@@ -1,29 +1,22 @@
 #!/usr/bin/python3
 class Rectangle:
     """
-    initialisation
+    This module provides a set of utility functions for working with strings.
 
+    Functions:
+    - `__init__(self, width, height)`: initialisation
     """
 
     def __init__(self, width=0, height=0):
-        """
-        function
-        """
         self.height = height
         self.width = width
 
     @property
     def height(self):
-        """
-        function
-        """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """
-        function
-        """
         if not isinstance(value, int):
             raise TypeError('height must be an integer')
         elif value < 0:
@@ -33,16 +26,10 @@ class Rectangle:
 
     @property
     def width(self):
-        """
-        function
-        """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """
-        function
-        """
         if not isinstance(value, int):
             raise TypeError('width must be an integer')
         elif value < 0:
