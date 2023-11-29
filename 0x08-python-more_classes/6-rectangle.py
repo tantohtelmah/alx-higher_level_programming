@@ -4,7 +4,9 @@
 
 class Rectangle:
     """ A class representing a rectangle. """
-
+    
+    number_of_instances = 0
+    
     def validator(self, value, attr):
         """ Validates the arguments """
         if type(value) is int:
@@ -64,7 +66,9 @@ class Rectangle:
         return rectangle[:-1]
 
     def __repr__(self):
+        self.number_of_instances += 1
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
+        self.number_of_instances -= 1
         print("Bye rectangle...")
