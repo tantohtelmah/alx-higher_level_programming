@@ -6,6 +6,8 @@
 class Rectangle:
     """ A class representing a rectangle. """
 
+    print_symbol = '#'
+
     def validator(self, value, attr):
         """ Validates the arguments """
         if type(value) is int:
@@ -56,23 +58,16 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return (2 * (self.width + self.height))
-
-    
-    print_symbol = '#'
     
     def __str__(self):
+        """ Prints """
         if self.width == 0 or self.height == 0:
             return ""
-        else:
-            self.print_symbol = ""
-            for i in range(self.height):
-                for j in range(self.width):
-                    self.print_symbol += "#"
-                self.print_symbol += "\n"
-            return self.print_symbol
+        rectangle = (self.width * "#" + "\n") * self.height
+        return rectangle[:-1]
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
-    
+
     def __del__(self):
         print("Bye rectangle...")
