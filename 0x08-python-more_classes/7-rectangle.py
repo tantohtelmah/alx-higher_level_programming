@@ -6,6 +6,7 @@ class Rectangle:
     """ A class representing a rectangle. """
 
     print_symbol = '#'
+    number_of_instances = 0
 
     def validator(self, value, attr):
         """ Validates the arguments """
@@ -27,6 +28,7 @@ class Rectangle:
         """
         self.__width = self.validator(width, "width")
         self.__height = self.validator(height, "height")
+        self.number_of_instances += 1
 
     @property
     def width(self):
@@ -62,11 +64,12 @@ class Rectangle:
         """ Prints """
         if self.width == 0 or self.height == 0:
             return ""
-        rectangle = (self.width * "#" + "\n") * self.height
+        rectangle = str(self.width * self.print_symbol + "\n" * self.height)
         return rectangle[:-1]
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
 
     def __del__(self):
+        self.number_of_instances -= 1
         print("Bye rectangle...")
