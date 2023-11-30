@@ -64,8 +64,8 @@ class Rectangle:
         """ Prints """
         if self.width == 0 or self.height == 0:
             return ""
-        rectangle = str(self.width * self.print_symbol + "\n" * self.height)
-        return rectangle[:-1]
+        rectangle = str(self.width * self.print_symbol) + "\n" * self.height
+        return rectangle
 
     def __repr__(self):
         return f"Rectangle({self.width}, {self.height})"
