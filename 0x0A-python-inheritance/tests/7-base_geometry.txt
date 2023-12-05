@@ -1,0 +1,5 @@
+>>> integer_validator = __import__("7-base_geometry").integer_validator
+
+>>> integer_validator("my_int", 12)
+[TypeError] name must be an integer
+
