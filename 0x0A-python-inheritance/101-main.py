@@ -1,7 +1,11 @@
 #!/usr/bin/python3
+""" initialisation """
+
+
 add_attribute = __import__('101-add_attribute').add_attribute
 
 class MyClass():
+    """ class """
     pass
 
 mc = MyClass()
