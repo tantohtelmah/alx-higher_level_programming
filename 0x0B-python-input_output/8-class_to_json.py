@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """ initialisation"""
 
+
 from typing import Any, Dict
+
 
 def class_to_json(obj: Any) -> Dict:
     """Returns the dictionary description with simple data 
