@@ -19,7 +19,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-        
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of list_dictionaries"""
@@ -28,7 +28,7 @@ class Base:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
-        
+
     @staticmethod
     def from_json_string(json_string):
         """Returns the list of the JSON string representation json_string"""
@@ -36,7 +36,7 @@ class Base:
             return []
         else:
             return json.loads(json_string)
-        
+
     @classmethod
     def create(cls, **dictionary):
         """Returns an instance with all attributes already set"""
@@ -47,7 +47,7 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
-    
+
     @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
@@ -60,7 +60,7 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except FileNotFoundError:
             return []
-        
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         import turtle
