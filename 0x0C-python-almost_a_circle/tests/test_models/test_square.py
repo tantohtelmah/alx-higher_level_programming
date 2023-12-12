@@ -1,5 +1,5 @@
 import unittest
-from models.square import 
+from models.square import Rectangle
 
 class TestRectangle(unittest.TestCase):
 
