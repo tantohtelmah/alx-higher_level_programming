@@ -46,10 +46,9 @@ class Square(Rectangle):
             setattr(self, key, value)
 
     def to_dictionary(self):
-        """Returns the dictionary representation of a Rectangle"""
+        """Returns the dictionary representation of a Square"""
 
-        return {"id": self.id, "width": self.width,
-                "height": self.height, "x": self.x, "y": self.y}
+        return {"id": self.id, "size": self.size, "x": self.x, "y": self.y}
 
     @classmethod
     def save_to_file(cls, list_objs):
