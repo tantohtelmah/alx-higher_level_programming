@@ -2,6 +2,10 @@ import unittest
 from models.rectangle import Rectangle
 
 class TestRectangle(unittest.TestCase):
+    def test_rectangle(self):
+        self.assertTrue(hasattr(Rectangle, "__init__"))
+        
+    def test_validator
 
     def test_area(self):
         """Tests the area of a rectangle"""

@@ -74,3 +74,10 @@ class Square(Rectangle):
 
         return {"id": self.id, "width": self.width,
                 "height": self.height, "x": self.x, "y": self.y}
+    @classmethod
+    def save_to_file(cls, list_objs):
+        filename = cls.__name__ + ".json"
+        obj_list = [obj.to_dictionary() for obj in list_objs]
+        json_str = cls.to_json_string(obj_list)
+        with open(filename, "w") as f:
+            f.write(json_str)
