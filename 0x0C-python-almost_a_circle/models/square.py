@@ -24,30 +24,6 @@ class Square(Rectangle):
         self.width = self.validator("width", value)
         self.height = self.validator("width", value)
 
-    @property
-    def x(self):
-        """Getter for x."""
-
-        return self.__x
-
-    @x.setter
-    def x(self, value):
-        """Setter for x."""
-
-        self.__x = self.validator("x", value)
-
-    @property
-    def y(self):
-        """Getter for y."""
-
-        return self.__y
-
-    @y.setter
-    def y(self, value):
-        """Setter for y."""
-
-        self.__y = self.validator("y", value)
-
     def __str__(self):
         """Returns [Square] (<id>)
         <x>/<y> - <square>
@@ -74,6 +50,7 @@ class Square(Rectangle):
 
         return {"id": self.id, "width": self.width,
                 "height": self.height, "x": self.x, "y": self.y}
+
     @classmethod
     def save_to_file(cls, list_objs):
         filename = cls.__name__ + ".json"
