@@ -71,12 +71,12 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Setter for y."""
-        
+
         self.__y = self.validator("y", value)
-        
+
     def area(self):
         """ Returns the area of the rectangle """
-        
+
         return self.__width * self.__height
 
     def display(self):
@@ -85,14 +85,15 @@ class Rectangle(Base):
             print()
         for i in range(self.height):
             print(" " * self.x + "#" * self.width)
-            
+
     def __str__(self):
-        """Returns [Rectangle] (<id>) 
+        """Returns [Rectangle] (<id>)
         <x>/<y> - <width>/<height>
         """
-        
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
-    
+
+        return f"[Rectangle]({self.id}) {self.x}/{self.y} -
+    {self.width}/{self.height}"
+
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
 
@@ -108,13 +109,13 @@ class Rectangle(Base):
             self.y = args[4]
         for key, value in kwargs.items():
             setattr(self, key, value)
-        
+
     def to_dictionary(self):
         """Returns the dictionary representation of a Rectangle"""
-        
+
         return {"id": self.id, "width": self.width,
                 "height": self.height, "x": self.x, "y": self.y}
-        
+
     @classmethod
     def save_to_file(cls, list_objs):
         filename = cls.__name__ + ".json"
@@ -122,21 +123,3 @@ class Rectangle(Base):
         json_str = cls.to_json_string(obj_list)
         with open(filename, "w") as f:
             f.write(json_str)
-    
-    @classmethod
-    def load_from_file_csv(cls):
-        """Deserializes a list of objects from a CSV file"""
-
-        filename = cls.__name__ + ".csv"
-        list_objs = []
-        try:
-            with open(filename, "r") as csvfile:
-                reader = csv.reader(csvfile)
-                for row in reader:
-                    if cls.__name__ == "Rectangle":
-                        list_objs.append(cls(int(row[1]), int(row[2]), int(row[3]), int(row[4]), int(row[0])))
-                    elif cls.__name__ == "Square":
-                        list_objs.append(cls(int(row[1]), int(row[2]), int(row[3]), int(row[0])))
-            return list_objs
-        except FileNotFoundError:
-            return []
