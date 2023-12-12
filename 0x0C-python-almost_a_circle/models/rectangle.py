@@ -23,10 +23,10 @@ class Rectangle(Base):
         """ Initialises a rectangle instance"""
 
         super().__init__(id)
-        self.width = self.validator("width", width)
-        self.height = self.validator("height", height)
-        self.x = self.validator("x", x)
-        self.y = self.validator("x", y)
+        self.__width = self.validator("width", width)
+        self.__height = self.validator("height", height)
+        self.__x = self.validator("x", x)
+        self.__y = self.validator("x", y)
 
     @property
     def width(self):
@@ -92,9 +92,9 @@ class Rectangle(Base):
         """Returns [Rectangle] (<id>)
         <x>/<y> - <width>/<height>
         """
-
-        return f"[Rectangle]({self.id})
-        {self.x}/{self.y} - {self.width}/{self.height}"
+        a = {self.x}/{self.y}
+        b = {self.width}
+        return f"[Rectangle]({self.id}) {a} - {b}/{self.height}"
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
