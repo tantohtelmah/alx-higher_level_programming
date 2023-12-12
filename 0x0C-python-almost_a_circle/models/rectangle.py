@@ -9,7 +9,7 @@ class Rectangle(Base):
     """ Defines a rectangle that inherits from base"""
 
     def validator(self, input, value):
-        """ ..."""
+        """ Validates input"""
 
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(input))
