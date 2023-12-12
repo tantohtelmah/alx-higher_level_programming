@@ -28,7 +28,7 @@ class Rectangle(Base):
         self.__width = self.validator("width", width)
         self.__height = self.validator("height", height)
         self.__x = self.validator("x", x)
-        self.__y = self.validator("x", y)
+        self.__y = self.validator("y", y)
 
     @property
     def width(self):
