@@ -94,10 +94,10 @@ class Rectangle(Base):
         """Returns [Rectangle] (<id>)
         <x>/<y> - <width>/<height>
         """
-        a = {self.x}
-        c = {self.y}
-        b = {self.width}
-        return f"[Rectangle]({self.id}) {a}/{c} - {b}/{self.height}"
+        a = self.x
+        c = self.y
+        b = self.width
+        return f"[Rectangle] ({self.id}) {a}/{c} - {b}/{self.height}"
 
     def update(self, *args, **kwargs):
         """Assigns an argument to each attribute"""
