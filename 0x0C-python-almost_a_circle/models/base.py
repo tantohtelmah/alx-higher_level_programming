@@ -75,7 +75,9 @@ class Base:
     def draw(list_rectangles, list_squares):
         import turtle
 
+        # Create a turtle object
         t = turtle.Turtle()
+
         for rect in list_rectangles:
             t.penup()
             t.goto(rect.x, rect.y)
