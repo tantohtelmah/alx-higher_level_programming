@@ -7,3 +7,6 @@ function printFirstArgument() {
 	  console.log(arguments[0]);
 	}
   }
+  // Example usage:
+printFirstArgument("Hello, world!"); // Prints: Hello, world!
+printFirstArgument(); // Prints: No argument
