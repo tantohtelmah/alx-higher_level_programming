@@ -1,6 +1,13 @@
 #!/usr/bin/node
 
-const originalString = "The value 12 is important.";
-const updatedString = originalString.replace(/12/g, "89");
+#!/usr/bin/node
+const myObject = {
+  type: 'object',
+  value: 12
+};
+console.log(myObject);
 
-console.log(updatedString);
+// Update the value from 12 to 89
+myObject.value = 89;
+
+console.log(myObject);
