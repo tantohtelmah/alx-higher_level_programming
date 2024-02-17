@@ -9,8 +9,7 @@ import sys
 
 if __name__ == "__main__":
     # Get MySQL credentials and state name from command line arguments
-    username, password, db_name, search_name = sys.argv[1], sys.argv[2],
-    sys.argv[3], sys.argv[4]
+    username, password, db_name, search_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 
     # Connect to MySQL server
     try:
