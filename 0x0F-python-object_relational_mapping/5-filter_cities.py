@@ -20,8 +20,7 @@ if __name__ == "__main__":
 
         # Execute SQL query (safe from injection)
         query = "SELECT cities.id, cities.name, states.name FROM cities \
-                 JOIN states ON cities.state_id = states.id \
-                    WHERE states.name = %s \
+                 JOIN states ON cities.state_id = states.id WHERE states.name = %s \
                  ORDER BY cities.id ASC"
         cursor.execute(query, (search_name,))
         cities = cursor.fetchall()
