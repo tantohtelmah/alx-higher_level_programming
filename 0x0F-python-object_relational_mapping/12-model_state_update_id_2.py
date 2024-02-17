@@ -7,8 +7,13 @@ Initiation of the code
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
+import sys
 
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("Usage: {} <mysql_username> <mysql_password> <database_name>".format(argv[0]))
+        exit(1)
+        
     # Get MySQL credentials from command line arguments
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
