@@ -8,8 +8,9 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Get MySQL credentials from command line arguments
-    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
+    # Get MySQL credentials and state name from command line arguments
+    username, password, db_name, search_name = sys.argv[1], sys.argv[2],
+    sys.argv[3], sys.argv[4]
 
     # Connect to MySQL server
     try:
@@ -17,9 +18,9 @@ if __name__ == "__main__":
                              user=username, passwd=password, db=db_name)
         cursor = db.cursor()
 
-        # Execute SQL query to retrieve states starting with 'N'
-        cursor.execute
-        ("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        # Execute SQL query to retrieve states matching the provided name
+        q = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
+        cursor.execute(q, (f"{search_name}%",))
         states = cursor.fetchall()
 
         # Display results
