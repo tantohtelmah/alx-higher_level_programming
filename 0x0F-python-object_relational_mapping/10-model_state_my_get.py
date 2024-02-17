@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     # Display the result
     if state:
-        print(state.id)
+        print(f"{state.id}: {state.name}")
     else:
         print("Not found")
 
