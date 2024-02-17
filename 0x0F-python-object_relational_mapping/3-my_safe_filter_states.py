@@ -9,7 +9,8 @@ import sys
 
 if __name__ == "__main__":
     # Get MySQL credentials and state name from command line arguments
-    username, password, db_name, search_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
+    username, password = sys.argv[1], sys.argv[2]
+    db_name, search_name = sys.argv[3], sys.argv[4]
 
     # Connect to MySQL server
     try:
@@ -17,7 +18,7 @@ if __name__ == "__main__":
                              user=username, passwd=password, db=db_name)
         cursor = db.cursor()
 
-        # Execute SQL query to retrieve states matching the provided name (safe from injection)
+        # Execute SQL query safe from injection
         query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
         cursor.execute(query, (search_name,))
         states = cursor.fetchall()
