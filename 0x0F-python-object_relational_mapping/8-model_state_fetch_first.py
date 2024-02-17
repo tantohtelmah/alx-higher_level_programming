@@ -20,12 +20,14 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query all State objects and sort by id
-    states = session.query(State).order_by(State.id).all()
+    # Query the first State object
+    first_state = session.query(State).order_by(State.id).first()
 
-    # Display results
-    for state in states:
-        print(f"{state.id}: {state.name}")
-
+    # Display the result
+    if first_state:
+        print(f"{first_state.id}: {first_state.name}")
+    else:
+        print("Nothing")
+    
     # Close the session
     session.close()

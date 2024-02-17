@@ -20,12 +20,15 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Query all State objects and sort by id
-    states = session.query(State).order_by(State.id).all()
+    # Query State objects containing the letter 'a'
+    states = session.query(State).filter(State.name.like('%a%')).order_by(State.id).all()
 
     # Display results
-    for state in states:
-        print(f"{state.id}: {state.name}")
+    if states:
+        for state in states:
+            print(f"{state.id}: {state.name}")
+    else:
+        print("Nothing")
 
     # Close the session
     session.close()
