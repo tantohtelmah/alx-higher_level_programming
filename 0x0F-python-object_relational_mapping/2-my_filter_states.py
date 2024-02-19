@@ -8,6 +8,12 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    # Check if all required arguments are provided
+    if len(sys.argv) != 4:
+        print("Usage: {} <mysql_username> <mysql_password> <database_name>"
+              .format(sys.argv[0]))
+        exit(1)
+
     # Get MySQL credentials and state name from command line arguments
     username, password, db_name, search_name = sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
 
@@ -17,7 +23,7 @@ if __name__ == "__main__":
                              user=username, passwd=password, db=db_name)
         cursor = db.cursor()
 
-        # Execute SQL query to retrieve states matching the provided name
+        # Execute query to retrieve states matching the provided name
         q = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
         cursor.execute(q, (f"{search_name}%",))
         states = cursor.fetchall()
