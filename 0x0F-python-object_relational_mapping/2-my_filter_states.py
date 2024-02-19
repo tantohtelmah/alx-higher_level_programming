@@ -31,7 +31,7 @@ if __name__ == "__main__":
         # Display results
         for row in states:
             state_id, state_name = row
-            print(f"{state_id}: {state_name}")
+            print(f"{state_id}: '{state_name}'")
 
         # Close cursor and database connection
         cursor.close()
