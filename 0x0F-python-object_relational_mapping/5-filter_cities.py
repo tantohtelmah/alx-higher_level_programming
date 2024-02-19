@@ -8,6 +8,12 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
+    # Check if all required arguments are provided
+    if len(sys.argv) != 4:
+        print("Usage: {} <mysql_username> <mysql_password> <database_name>"
+              .format(sys.argv[0]))
+        exit(1)
+
     # Get MySQL credentials and state name from command line arguments
     username, password = sys.argv[1], sys.argv[2]
     db_name, search_name = sys.argv[3], sys.argv[4]
