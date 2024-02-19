@@ -29,8 +29,9 @@ if __name__ == "__main__":
         states = cursor.fetchall()
 
         # Display results
-        for state in states:
-            print(state)
+        for row in states:
+            state_id, state_name = row
+            print(f"{state_id}: {state_name}")
 
         # Close cursor and database connection
         cursor.close()
