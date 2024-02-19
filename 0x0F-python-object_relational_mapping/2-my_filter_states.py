@@ -24,7 +24,7 @@ if __name__ == "__main__":
         cursor = db.cursor()
 
         # Execute query to retrieve states matching the provided name
-        q = "SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC"
+        q = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
         cursor.execute(q, (f"{search_name}%",))
         states = cursor.fetchall()
 
