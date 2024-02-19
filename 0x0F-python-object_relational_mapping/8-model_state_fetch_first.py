@@ -14,7 +14,8 @@ if __name__ == "__main__":
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
     # Create an SQLite engine
-    engine = create_engine(f"mysql+mysqldb://{username}:{password}@localhost:3306/{db_name}")
+    engine = create_engine(f"mysql+mysqldb://{username}:
+                           {password}@localhost:3306/{db_name}")
 
     # Create a session
     Session = sessionmaker(bind=engine)
@@ -28,6 +29,6 @@ if __name__ == "__main__":
         print(f"{first_state.id}: {first_state.name}")
     else:
         print("Nothing")
-    
+
     # Close the session
     session.close()
