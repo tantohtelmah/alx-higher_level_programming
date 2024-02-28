@@ -21,7 +21,7 @@ class Rectangle(BaseGeometry):
 class Square(Rectangle):
     def __init__(self, size):
         self.__size = size
-        self.integer_validator(self.__size, self.__size)
+        self.integer_validator(self.__size)
         
     def area(self):
         """ Returns the area of the Rectangle """
@@ -31,5 +31,5 @@ class Square(Rectangle):
     def __str__(self):
         """ Returns a string representation of the Rectangle """
 
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[Sqaure] {}/{}".format(self.__size, self.__size)
     
