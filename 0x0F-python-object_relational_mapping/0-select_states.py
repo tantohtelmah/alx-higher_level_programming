@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+"""
+Initialisation of code
+"""
+
+
 import MySQLdb
 import sys
 
@@ -6,7 +12,8 @@ if __name__ == "__main__":
     username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
 
     # Connect to MySQL server
-    db = MySQLdb.connect(host="localhost", port=3306, user=username, passwd=password, db=db_name, charset="utf8")
+    db = MySQLdb.connect(host="localhost", port=3306, user=username,
+                         passwd=password, db=db_name, charset="utf8")
     cursor = db.cursor()
 
     # Execute query to retrieve all states
