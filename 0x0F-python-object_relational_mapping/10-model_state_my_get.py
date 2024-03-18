@@ -11,7 +11,8 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     if len(argv) != 5:
-        print("Usage: {} <username> <password> <database> <state_name>".format(argv[0]))
+        print("Usage: {} <username> <password> <database> <state_name>"
+              .format(argv[0]))
         exit(1)
 
     username, password, database, state_name = argv[1:]

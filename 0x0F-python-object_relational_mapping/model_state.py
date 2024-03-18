@@ -10,13 +10,16 @@ from sqlalchemy.ext.declarative import declarative_base
 # Create the declarative base instance
 Base = declarative_base()
 
+
 class State(Base):
     """
     Represents a state in the MySQL table 'states'.
     """
+
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
+
 
 if __name__ == "__main__":
     # This code will not be executed when imported

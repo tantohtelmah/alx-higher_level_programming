@@ -30,4 +30,3 @@ if __name__ == "__main__":
         print("State with id 2 not found")
 
     session.close()
-

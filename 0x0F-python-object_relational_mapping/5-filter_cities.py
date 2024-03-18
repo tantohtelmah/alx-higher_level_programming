@@ -3,11 +3,14 @@
 Script that lists all cities from the database hbtn_0e_4_usa.
 """
 
+
 import sys
 import MySQLdb
 
+
 def list_cities():
     """Connects to MySQL and lists cities."""
+
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
@@ -35,6 +38,7 @@ def list_cities():
     except MySQLdb.Error as e:
         print("Error connecting to MySQL:", e)
         sys.exit(1)
+
 
 if __name__ == "__main__":
     list_cities()
