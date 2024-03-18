@@ -8,6 +8,7 @@ from model_state import State, Base
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
+
 if __name__ == "__main__":
     if len(argv) != 4:
         print("Usage: {} <username> <password> <database>".format(argv[0]))

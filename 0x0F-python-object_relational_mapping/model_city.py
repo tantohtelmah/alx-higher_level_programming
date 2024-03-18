@@ -2,10 +2,7 @@
 """
 Python file containing the class definition of a city and an instance Base.
 """
-
-
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
 from model_state import Base
 
 
