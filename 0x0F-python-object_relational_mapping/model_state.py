@@ -9,6 +9,9 @@ from sqlalchemy.ext.declarative import declarative_base
 
 mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
+"""
+base declaration
+"""
 
 
 if __name__ == "__main__":
