@@ -7,7 +7,6 @@ Python file containing the class definition of a State and an instance Base.
 from sqlalchemy import Column, Integer, String, MetaData
 from sqlalchemy.ext.declarative import declarative_base
 
-# Creating the declarative base instance
 mymetadata = MetaData()
 Base = declarative_base(metadata=mymetadata)
 
