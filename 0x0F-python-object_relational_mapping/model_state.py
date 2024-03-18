@@ -22,6 +22,9 @@ class State(Base):
 
 
 if __name__ == "__main__":
-    # This code will not be executed when imported
-    # You can add more code here if needed
+    from sqlalchemy import create_engine
+    engine = create_engine('mysql://username:password@localhost:3306/db_name')
+
+    # Create tables
+    Base.metadata.create_all(engine)
     pass
