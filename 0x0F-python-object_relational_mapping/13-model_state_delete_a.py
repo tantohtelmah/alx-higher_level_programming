@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Script that deletes all State objects with a name containing the letter 'a'
 from the database hbtn_0e_6_usa.
