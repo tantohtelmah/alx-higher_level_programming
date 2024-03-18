@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """
 Python file containing the class definition of a State and an instance Base.
 """
