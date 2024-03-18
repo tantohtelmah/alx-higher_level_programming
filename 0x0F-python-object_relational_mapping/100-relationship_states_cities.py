@@ -13,7 +13,8 @@ if __name__ == "__main__":
 
     # Check if correct number of arguments provided
     if len(sys.argv) != 4:
-        print("Usage: {} <mysql username> <mysql password> <database name>".format(sys.argv[0]))
+        print("Usage: {} <mysql username> <mysql password> <database name>"
+              .format(sys.argv[0]))
         sys.exit(1)
 
     # Create connection to MySQL server
