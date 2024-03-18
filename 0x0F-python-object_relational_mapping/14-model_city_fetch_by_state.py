@@ -4,9 +4,20 @@ Script that prints all City objects from the database hbtn_0e_14_usa.
 """
 
 import sys
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, MetaData
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State, City
+from model_state import State, City
+
+mymetadata = MetaData()
+"""
+meta data declaration
+"""
+Base = declarative_base(metadata=mymetadata)
+"""
+base declaration
+"""
+
 
 if __name__ == "__main__":
     # Check if correct number of arguments provided
