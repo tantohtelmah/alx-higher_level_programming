@@ -18,6 +18,7 @@ def get_X_Request_id(url):
     except urllib.error.URLError as e:
         print(f"Error fetching data from {url}: {e}")
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script_name.py <URL>")

@@ -10,12 +10,14 @@ def send_post_request(url, email):
     try:
         payload = {"email": email}
         response = requests.post(url, data=payload)
-        response.raise_for_status()  # Raise an exception if the status code is not 200 (OK)
+        # Raise an exception if the status code is not 200 (OK)
+        response.raise_for_status()
 
         content = response.text
         print(f"Body response:\n{content}")
     except requests.exceptions.RequestException as e:
         print(f"Error sending POST request to {url}: {e}")
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:

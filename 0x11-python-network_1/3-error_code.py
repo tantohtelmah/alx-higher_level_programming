@@ -15,6 +15,7 @@ def fetch_url_content(url):
     except urllib.error.HTTPError as e:
         print(f"Error code: {e.code}")
 
+
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script_name.py <URL>")
