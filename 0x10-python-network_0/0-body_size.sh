@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Check if a URL argument is provided
 if [ $# -ne 1 ]; then
     echo "Usage: $0 <URL>"
