@@ -6,6 +6,7 @@ Inisialisation of the code
 import requests
 import sys
 
+
 def get_commits(repo_name, owner_name):
     base_url = "https://api.github.com/repos"
     url = f"{base_url}/{owner_name}/{repo_name}/commits"
@@ -22,6 +23,7 @@ def get_commits(repo_name, owner_name):
 
     except requests.RequestException as e:
         print(f"Error fetching commits: {e}", file=sys.stderr)
+
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
