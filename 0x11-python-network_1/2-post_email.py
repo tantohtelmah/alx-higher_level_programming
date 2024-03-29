@@ -10,9 +10,10 @@ def send_Post_Request(url, email):
     try:
         # Encode the email parameter
         data = urllib.parse.urlencode({"email": email}).encode("utf-8")
-
+        print("hi")
         # Create a POST request
         with urllib.request.urlopen(url, data=data) as response:
+            print("hi")
             content = response.read().decode("utf-8")
             print(f"Your email is: {content}")
     except urllib.error.URLError as e:
