@@ -14,7 +14,7 @@ def send_post_request(url, email):
         response.raise_for_status()
 
         content = response.text
-        print(f"Body response:\n{content}")
+        print(f"Your email is: {content}")
     except requests.exceptions.RequestException as e:
         print(f"Error sending POST request to {url}: {e}")
 
