@@ -6,25 +6,27 @@ Inisialisation of the code
 import requests
 import sys
 
+def get_commits(repo_name, owner_name):
+    base_url = "https://api.github.com/repos"
+    url = f"{base_url}/{owner_name}/{repo_name}/commits"
 
-def get_owner_id(repo_name, owner_name):
-    url = f"https://api.github.com/repos/{owner_name}/{repo_name}"
     try:
         response = requests.get(url)
-        # Raise an exception if the status code is not 200 (OK)
         response.raise_for_status()
+        commits = response.json()
 
-        repo_data = response.json()
-        owner_id = repo_data.get("owner", {}).get("id")
-        if owner_id:
-            print(f"Owner ID for {owner_name}/{repo_name}: {owner_id}")
-        else:
-            print(f"Unable to retrieve owner ID for {owner_name}/{repo_name}.")
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching data from GitHub API: {e}")
+        for commit in commits[:10]:
+            sha = commit["sha"]
+            author_name = commit["commit"]["author"]["name"]
+            print(f"{sha}: {author_name}")
 
+    except requests.RequestException as e:
+        print(f"Error fetching commits: {e}", file=sys.stderr)
 
 if __name__ == "__main__":
-    repo_name_arg = sys.argv[1]
-    owner_name_arg = sys.argv[2]
-    get_owner_id(repo_name_arg, owner_name_arg)
+    if len(sys.argv) != 3:
+        print("Usage: python script.py <repository_name> <owner_name>")
+        sys.exit(1)
+
+    repo_name, owner_name = sys.argv[1], sys.argv[2]
+    get_commits(repo_name, owner_name)
