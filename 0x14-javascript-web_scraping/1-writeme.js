@@ -5,9 +5,7 @@ const fs = require('fs');
 function writeStringToFile (filePath, content) {
   fs.writeFile(filePath, content, 'utf-8', (err) => {
     if (err) {
-      console.error(`Error writing to the file: ${err.message}`);
-    } else {
-      console.log(`Content successfully written to ${filePath}`);
+      console.error(`${err.message}`);
     }
   });
 }
