@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const request = require('request');
 
 function getMovieCountForCharacter (apiUrl) {
