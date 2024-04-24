@@ -24,7 +24,7 @@ function getMovieCharacters (movieId) {
     characters.forEach((characterUrl) => {
       request(characterUrl, (charError, charResponse, charBody) => {
         if (charError) {
-          console.error(`Error fetching character data: ${charError}`);
+          console.error(`${charError}`);
           return;
         }
         const charData = JSON.parse(charBody);
