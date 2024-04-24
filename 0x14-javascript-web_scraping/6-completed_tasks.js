@@ -17,7 +17,7 @@ function computeCompletedTasksByUser (url) {
           completedTasksByUser[userId]++;
         }
       }
-	  console.log(completedTasksByUser);
+      console.log(completedTasksByUser);
     } else {
       console.error(`${response.statusCode}`);
     }
